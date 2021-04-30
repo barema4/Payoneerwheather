@@ -17,20 +17,29 @@ export const getWeatherForecasts = () => ({
     type: GET_WEATHER_FAILURE,
   })
 
-  export function fetchWeatherForecasts() {
+  export const fetchWeatherForecasts = ()  =>{
 
     return async (dispatch) => {
 
       dispatch(getWeatherForecasts())
   
-      try {
-          
+      try {  
         const response = await fetch('http://api.openweathermap.org/data/2.5/forecast?q=Munich,de&APPID=75f972b80e26f14fe6c920aa6a85ad57&cnt=40')
+       
         const data = await response.json()
-        dispatch(getWeatherForecastsSuccess(data))
+        const weatherData = data.list
+        const result = weatherData.reduce(function (r, a) {
+          const dateFilter = a.dt_txt.split(' ')[0];
+            r[dateFilter] = r[dateFilter] || [];
+            r[dateFilter].push(a);
+            return r;
+        }, Object.create(null));
+       
+        dispatch(getWeatherForecastsSuccess(result))
 
       } catch (error) {
         dispatch(getWeatherForecastsFailure())
       }
-    }
+    
   }
+}
