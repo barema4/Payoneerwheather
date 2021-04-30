@@ -49,16 +49,10 @@ const WeatherForecast = () => {
     const thirdDay =  getsDaysAndTemp(dayThree);
     const fourthDay =  getsDaysAndTemp(dayFour);
     const fifthDay =  getsDaysAndTemp(dayFive);
-    // console.log(firstDay, secondDay, thirdDay,fourthDay, fifthDay)
-    firstDay.reduce((accumulator, currentValue) => {
-      let data = (accumulator + currentValue)/firstDay.length
-      console.log(data, 'sssssssss')
-      return data
-     
-  }, 0)
+
     const averageTemperature = function(averageData){
       if(averageData){
-return averageData.reduce((accumulator, currentValue) => {
+          return averageData.reduce((accumulator, currentValue) => {
           let data = (accumulator + currentValue)/averageData.length
           return data
          
