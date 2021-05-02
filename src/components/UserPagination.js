@@ -1,29 +1,28 @@
-// import React, {useState} from 'react';
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 
-// function usePagination(data, itemsPerPage) {
-//     const [currentPage, setCurrentPage] = useState(1);
-//     const maxPage = Math.ceil(data.length / itemsPerPage);
-//     function currentData() {
-//     const begin = (currentPage - 1) * itemsPerPage;
-//     const end = begin + itemsPerPage;
-//      return data.slice(begin, end);
-//     }
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+      '& > *': {
+        margin: theme.spacing(1),
+      },
+    },
+  }));
+
+function usePagination(props) {
+
+    const classes = useStyles();
     
-//     function next() {
-//      setCurrentPage((currentPage) => Math.min(currentPage + 1, maxPage));
-//      }
-    
-//      function prev() {
-//       setCurrentPage((currentPage) => Math.max(currentPage - 1, 1));
-//      }
-    
-//     function jump(page) {
-//       const pageNumber = Math.max(1, page);
-//      setCurrentPage((currentPage) => Math.min(pageNumber, maxPage));
-//     }
-    
-//      return [ next, prev, jump, currentData, currentPage, maxPage ];
-//     }
+     return (
+        <div className={classes.root}>
+        <Button variant="outlined" onClick={() => props.paginate('previous')}>Prev</Button>
+        <Button variant="outlined" color="primary" onClick={()=>props.paginate('next')}>
+          Next
+        </Button>
+      </div>
+     )
+    }
    
-
-// export default usePagination;
+export default usePagination;

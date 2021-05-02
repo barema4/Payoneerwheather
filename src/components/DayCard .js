@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -29,6 +29,15 @@ const useStyles = makeStyles({
 
 
 const DayCard  = (props) => {
+  const [temperatureData, setTemperatureData] = useState({props})
+  const [pageNumber, setPageNumber] = useState(0)
+  const temperaturePerPage = 3
+  const pagesVisited = pageNumber * temperaturePerPage
+
+
+
+  // setTemperatureData(props)
+  console.log(temperatureData, 'temperatureData')
   
   const fahrenheitAvg = kelvinToFahrenheit(props.avg)
   const celsiusAvg = kelvinToCelsius(props.avg)
@@ -41,6 +50,9 @@ const DayCard  = (props) => {
     props.setTemperatures(temps)
     props.showChartVisibility()
 } 
+
+const displayTemperature  = props.temps.slice(pagesVisited, pagesVisited + temperaturePerPage)
+console.log(displayTemperature, 'displayTemperature')
 
 
     return (
