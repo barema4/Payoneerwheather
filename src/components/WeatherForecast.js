@@ -66,15 +66,11 @@ const WeatherForecast = () => {
       if(weather.weather.length !== 0){
         let arr = [];
         let data = Object.keys(weather.weather)
-        for(let num=0; num<3; num++) {
-          
+        for(let num=0; num<3; num++) {    
           arr.push(data[num])
-        }
-        
+        }      
         setPagination(arr)
       }
-      
-
     },[weather.weather, dataArr.length])
 
     const averageTemperature = function(averageData){
