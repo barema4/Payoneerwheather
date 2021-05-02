@@ -1,44 +1,9 @@
-import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
 import { kelvinToFahrenheit, kelvinToCelsius } from '../utils'
-var moment = require('moment')
-
-
-
-const useStyles = makeStyles({
-    root: {
-      minWidth: 275,
-    },
-    bullet: {
-      display: 'inline-block',
-      margin: '0 2px',
-      transform: 'scale(0.8)',
-    },
-    title: {
-      fontSize: 14,
-    },
-    pos: {
-      marginBottom: 12,
-    },
-  });
+import React from 'react';
 
 
 const DayCard  = (props) => {
-  const [temperatureData, setTemperatureData] = useState({props})
-  const [pageNumber, setPageNumber] = useState(0)
-  const temperaturePerPage = 3
-  const pagesVisited = pageNumber * temperaturePerPage
 
-
-
-  // setTemperatureData(props)
-  console.log(temperatureData, 'temperatureData')
-  
   const fahrenheitAvg = kelvinToFahrenheit(props.avg)
   const celsiusAvg = kelvinToCelsius(props.avg)
 
@@ -49,19 +14,14 @@ const DayCard  = (props) => {
     const temps = props.scale === 'celsius' ? celsius : fahrenheit
     props.setTemperatures(temps)
     props.showChartVisibility()
-} 
-
-const displayTemperature  = props.temps.slice(pagesVisited, pagesVisited + temperaturePerPage)
-console.log(displayTemperature, 'displayTemperature')
-
-
+     }
     return (
       <div className="details" onClick={handleClick}>
       <div className="card">
         <div className="card-body">
-          <label>Temp</label>
+          <label>Temp:</label>
           <p className="card-text">{props.scale === "celsius" ? celsiusAvg + "°C" : fahrenheitAvg + "°F"}</p>
-          <label>Date</label>
+          <label>Date:</label>
           <p className="card-text">{props.date}</p>
         </div>
       </div>
@@ -71,5 +31,4 @@ console.log(displayTemperature, 'displayTemperature')
         
     );
 };
-
-export default DayCard ;
+export default DayCard;

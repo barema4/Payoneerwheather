@@ -1,12 +1,13 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
+import ForwardIcon from '@material-ui/icons/Forward';
 
 
 const useStyles = makeStyles((theme) => ({
     root: {
       '& > *': {
         margin: theme.spacing(1),
+        justifyContent: 'space-between'
       },
     },
   }));
@@ -17,12 +18,9 @@ function usePagination(props) {
     
      return (
         <div className={classes.root}>
-        <Button variant="outlined" onClick={() => props.paginate('previous')}>Prev</Button>
-        <Button variant="outlined" color="primary" onClick={()=>props.paginate('next')}>
-          Next
-        </Button>
+        <ForwardIcon variant="outlined" onClick={() => props.paginate('previous')}  style={{ fontSize: 50 }}/>
+        <ForwardIcon variant="outlined" color="primary" onClick={()=>props.paginate('next')} style={{ fontSize: 50 }} />
       </div>
      )
     }
-   
 export default usePagination;

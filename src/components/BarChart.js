@@ -25,11 +25,10 @@ const VerticalBar = (props) => {
     return(
         <>
         <div className='header'>
-          <h1 className='title'>Vertical Bar Chart</h1>
+          <h1 className='title'>Temperatures Of The Day</h1>
         </div>
         <Bar data={data} options={{}} />
       </>
     )
 }
- 
 export default VerticalBar;

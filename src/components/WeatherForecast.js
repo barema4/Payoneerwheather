@@ -1,6 +1,7 @@
-import {useState, useEffect, useCallback} from 'react';
+import {useState, useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import {fetchWeatherForecasts }from '../actions/weatherActions'
+import Container from '@material-ui/core/Container'
 import DayCard from './DayCard '
 import DegreeToggle from './DegreeToggle'
 import UserPagination from './UserPagination';
@@ -12,8 +13,7 @@ const WeatherForecast = () => {
     const [scale, setScale] = useState('fahrenheit');
     const [showChart, setShowChart] = useState(false)
     const [temperatures, setTemperatures] = useState([])
-    // const [count, setCount] = useState(0);
-    const [paginatedData, setPaginatedData] = useState([])
+    // const [paginatedData, setPaginatedData] = useState([])
     const [pagination, setPagination] = useState([])
    
     const handleChange = (event) => {
@@ -40,36 +40,27 @@ const WeatherForecast = () => {
     const dataArr = Object.keys(weather.weather)
 
     const paginate = (value) => {
-      let data = Object.keys(weather.weather)
-      // console.log("here +++++++++++++ house>")
-      
+      let data = Object.keys(weather.weather) 
       if(value === 'previous'){
         let data1 = [];
         for(let num=0; num<3; num++) {
-         
-          console.log("prevhouse>", data, "__________________---____", data1, data, data[num]);
           data1.push(data[num])
           
         }
         setPagination(data1)
       }else{
         let data2 = [];
-        for(let num=3; num<6; num++) {
-          
-          
-          data2.push(data[num])
-          console.log("next +++++++++>", data, "__________________---____", data2);
-          
+        for(let num=3; num<6; num++) { 
+          data2.push(data[num])   
         }
         setPagination(data2)
       }
-      
     }
-
     useEffect(() => {
       dispatch(fetchWeatherForecasts())
     
     }, [dispatch])
+
 
     useEffect(() => {
       if(weather.weather.length !== 0){
@@ -86,8 +77,6 @@ const WeatherForecast = () => {
 
     },[weather.weather, dataArr.length])
 
-   
-
     const averageTemperature = function(averageData){
       if(averageData){
           return averageData.reduce((accumulator, currentValue) => {
@@ -97,32 +86,20 @@ const WeatherForecast = () => {
       }, 0)
       }
     }
-
- 
-
     return (
-        <div className="cover">
-        
+      <Container className="cover">            
         <div><DegreeToggle handleChange={handleChange} value={scale}/></div>
         <div><UserPagination paginate={paginate}/></div>
-        {/* {  console.log(paginatedData, 'paginatedData')} */}
           <div className="data">
-          {/* {console.log("weather.weather +++>", weather.weather)} */}
           { 
-        
-        
         Object.keys(weather.weather).map(function(key, index) {
               let temps = weather.weather[key].map(temp => temp.main.temp)
-              // console.log("joujdfjodjfojfdoijdf>>>>>", pagination, key)
               return pagination.includes(key)?<div key={index}><DayCard date={key} avg={averageTemperature(temps)} scale={scale} temps={temps} showChartVisibility={showChartVisibility} setTemperatures={setTemperatures} /></div>:""
-              
             })
           }
-          
           </div>
           { showChart ? <BarChart temperatures={temperatures} scale={scale} /> : ''}
-        </div>
-    );
-};
-
+        </Container>
+    )};
 export default WeatherForecast;
+   
