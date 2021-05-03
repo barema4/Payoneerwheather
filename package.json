@@ -1,4 +1,5 @@
-{ "homepage": "http://{barema4}.github.io/{Payoneerwheather}",
+{ 
+  "homepage": "https://barema4.github.io/Payoneerwheather",
   "name": "payoneer",
   "version": "0.1.0",
   "private": true,
