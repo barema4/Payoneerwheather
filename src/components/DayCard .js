@@ -1,5 +1,6 @@
 import { kelvinToFahrenheit, kelvinToCelsius } from '../utils'
 import React from 'react';
+import moment from 'moment'
 
 
 const DayCard  = (props) => {
@@ -22,7 +23,7 @@ const DayCard  = (props) => {
           <label>Temp:</label>
           <p className="card-text">{props.scale === "celsius" ? celsiusAvg + "°C" : fahrenheitAvg + "°F"}</p>
           <label>Date:</label>
-          <p className="card-text">{props.date}</p>
+          <p className="card-text">{moment(props.date).format("DD MMM YY")}</p>
         </div>
       </div>
       <div>

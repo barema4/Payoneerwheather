@@ -23,12 +23,15 @@ const VerticalBar = (props) => {
   ],
 };
     return(
-        <>
-        <div className='header'>
-          <h1 className='title'>Temperatures Of The Day</h1>
-        </div>
-        <Bar data={data} options={{}} />
-      </>
+      <React.Fragment>
+          <div>
+          <div className='header'>
+            <h1 className='title'>Temperatures Of The Day</h1>
+          </div>
+         <Bar data={data} options={{}} />
+        </div> 
+
+      </React.Fragment> 
     )
 }
 export default VerticalBar;
