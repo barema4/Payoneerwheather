@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/%7BPayoneerwheather%7D/static/css/main.54710f1f.chunk.css",
-    "main.js": "/%7BPayoneerwheather%7D/static/js/main.1c1e6025.chunk.js",
-    "main.js.map": "/%7BPayoneerwheather%7D/static/js/main.1c1e6025.chunk.js.map",
-    "runtime-main.js": "/%7BPayoneerwheather%7D/static/js/runtime-main.ac6134fa.js",
-    "runtime-main.js.map": "/%7BPayoneerwheather%7D/static/js/runtime-main.ac6134fa.js.map",
-    "static/js/2.7ca83295.chunk.js": "/%7BPayoneerwheather%7D/static/js/2.7ca83295.chunk.js",
-    "static/js/2.7ca83295.chunk.js.map": "/%7BPayoneerwheather%7D/static/js/2.7ca83295.chunk.js.map",
-    "index.html": "/%7BPayoneerwheather%7D/index.html",
-    "static/css/main.54710f1f.chunk.css.map": "/%7BPayoneerwheather%7D/static/css/main.54710f1f.chunk.css.map",
-    "static/js/2.7ca83295.chunk.js.LICENSE.txt": "/%7BPayoneerwheather%7D/static/js/2.7ca83295.chunk.js.LICENSE.txt"
+    "main.css": "/Payoneerwheather/static/css/main.54710f1f.chunk.css",
+    "main.js": "/Payoneerwheather/static/js/main.1c1e6025.chunk.js",
+    "main.js.map": "/Payoneerwheather/static/js/main.1c1e6025.chunk.js.map",
+    "runtime-main.js": "/Payoneerwheather/static/js/runtime-main.ef78eb0e.js",
+    "runtime-main.js.map": "/Payoneerwheather/static/js/runtime-main.ef78eb0e.js.map",
+    "static/js/2.7ca83295.chunk.js": "/Payoneerwheather/static/js/2.7ca83295.chunk.js",
+    "static/js/2.7ca83295.chunk.js.map": "/Payoneerwheather/static/js/2.7ca83295.chunk.js.map",
+    "index.html": "/Payoneerwheather/index.html",
+    "static/css/main.54710f1f.chunk.css.map": "/Payoneerwheather/static/css/main.54710f1f.chunk.css.map",
+    "static/js/2.7ca83295.chunk.js.LICENSE.txt": "/Payoneerwheather/static/js/2.7ca83295.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.ac6134fa.js",
+    "static/js/runtime-main.ef78eb0e.js",
     "static/js/2.7ca83295.chunk.js",
     "static/css/main.54710f1f.chunk.css",
     "static/js/main.1c1e6025.chunk.js"
