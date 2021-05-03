@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Payoneerwheather/static/css/main.54710f1f.chunk.css",
-    "main.js": "/Payoneerwheather/static/js/main.609a2b2c.chunk.js",
-    "main.js.map": "/Payoneerwheather/static/js/main.609a2b2c.chunk.js.map",
+    "main.js": "/Payoneerwheather/static/js/main.7af8ecf6.chunk.js",
+    "main.js.map": "/Payoneerwheather/static/js/main.7af8ecf6.chunk.js.map",
     "runtime-main.js": "/Payoneerwheather/static/js/runtime-main.ef78eb0e.js",
     "runtime-main.js.map": "/Payoneerwheather/static/js/runtime-main.ef78eb0e.js.map",
     "static/js/2.b0d1186d.chunk.js": "/Payoneerwheather/static/js/2.b0d1186d.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.ef78eb0e.js",
     "static/js/2.b0d1186d.chunk.js",
     "static/css/main.54710f1f.chunk.css",
-    "static/js/main.609a2b2c.chunk.js"
+    "static/js/main.7af8ecf6.chunk.js"
   ]
 }
