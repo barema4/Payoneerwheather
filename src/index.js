@@ -8,7 +8,6 @@ import './index.css';
 import App from './App';
 import rootReducer from './reducers'
 
-
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
 
 ReactDOM.render(
