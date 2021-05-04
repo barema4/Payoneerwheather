@@ -2,7 +2,7 @@
   "name": "payoneer",
   "version": "0.1.0",
   "private": true,
-  "homepage": "httpsgit ://barema4.github.io/Payoneerwheather",
+  "homepage": "http://barema4.github.io/Payoneerwheather",
   "dependencies": {
     "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
